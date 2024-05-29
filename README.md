@@ -51,4 +51,5 @@ PHPUnit testlerini çalıştırmak için:
 
 ```bash
 ./vendor/bin/sail artisan key:generate --env=testing
-./vendor/bin/sail artisan test
+./vendor/bin/sail artisan test  --env=testing
+```
