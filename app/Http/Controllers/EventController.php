@@ -31,7 +31,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function store(EventCreateRequest $request)
+    public function store(EventCreateRequest $request): JsonResponse
     {
         $event = $request->user()->events()->create([
             'name' => $request->string('name')->trim(),
@@ -46,7 +46,7 @@ class EventController extends Controller
         ], status: 201);
     }
 
-    public function update(EventUpdateRequest $request, Event $event)
+    public function update(EventUpdateRequest $request, Event $event): JsonResponse
     {
         $event->update([
             'name' => $request->string('name')->trim(),
@@ -61,7 +61,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function destroy(EventDeleteRequest $request, Event $event)
+    public function destroy(EventDeleteRequest $request, Event $event): JsonResponse
     {
         $event->delete();
 
